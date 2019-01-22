@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Exercice 5</title>
+  </head>
+  <body>
+    <form>
+         <label for="firstNumber">Premier nombre : </label><input type="text" id="firstNumber" name="firstNumber"/><br/>
+         <label for="secondNumber">Deuxième nombre : </label><input type="text" id="secondNumber" name="secondNumber"/><br/>
+         <button onclick="multiplyReel()" id="submit" name ="submit">Valider</button>
+</form>
+<script>
+function multiplyReel() {
+      var firstNumber = document.getElementById('firstNumber').value; //type string
+      var secondNumber = document.getElementById('secondNumber').value; // type string
+      //isNan(parameter) is Not a Number
+      // ! NOT
+    //% 1 !==0 il permet d'avoir un nombre à virgule
+      if (!isNaN(firstNumber) && !isNaN(secondNumber)) {
+        if (Number(firstNumber) % 1 !== 0 && Number(secondNumber) % 1 !== 0) {
+          //retourne la partie entière d'un nombre en retirant la partie décimale. Math.trunc
+          a1 = Math.trunc(firstNumber);
+          a2 = secondNumber;
+          result = a1 * a2;
+          alert(result);
+        } else {
+          alert("ce ne sont pas des nombre entiers");
+        }
+      } else {
+        alert("attention ce ne sont pas des nombres");
+      }
+    }
+    </script>
+  </body>
+</html>
